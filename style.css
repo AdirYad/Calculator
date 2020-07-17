@@ -1,0 +1,73 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(120deg, #3498db, #8e44ad);
+}
+
+main {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background: #e2e5e5;
+}
+
+main > div > .output {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    grid-column: 1 / 5;
+    background: rgba(0, 0, 0, .75);
+    margin-bottom: -1px;
+    padding: 10px;
+    text-align: right;
+    color: white;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+main > div > .output > .previous-operand  {
+    font-size: 1.5rem;
+}
+
+main > div > .output > .current-operand  {
+    font-size: 2.5rem;
+}
+
+main > div {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    grid-gap: 1.5px;
+    text-align: center;
+}
+
+main > div > button {
+    background: #3498db;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: 500;
+    transition: background 100ms;
+    color: #070707;
+}
+
+main > div > button:hover {
+    background: rgba(255, 255, 255, .9);
+}
+
+main > div .ac {
+    grid-column: 1 / 3;
+}
+
+main > div .equals {
+    grid-column: 3 / 5;
+}
